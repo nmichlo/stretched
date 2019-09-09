@@ -3,10 +3,53 @@
 Python bindings for Stretch - A high performance flexbox implementation written in rust.
 
 
+## Install
+
+```bash
+pip3 install stretched
+```
+
+Note: Only MacOS versions for python 3.6 and 3.7 have been compiled. Linux and Windows binaries are on the roadmap.
+
+
+## Quickstart
+
+
+```python
+from stretched import *
+
+# Flexbox container/node
+node = Node()
+
+# Flexbox container/node child
+child = Node()
+node.add_child(child)
+assert len(node) == 1
+
+# Remove child
+node.remove_child(child)
+assert len(node) == 0
+
+# Flexbox style object
+style = Style()
+child = node.add_child(Node(style))
+assert len(node) == 1
+
+# Compute/Recompute layout for a container of 1920x1080 units
+layout = node.compute_layout(Size(1920, 1080))
+assert layout.width == 1920
+assert layout.height == 1080
+
+# Size measuring callback for compute layout:
+node.measure = lambda size: Size(1920, 1080)
+layout = node.compute_layout(Size(None, None)) # unbounded
+assert layout.width == 1920
+assert layout.height == 1080
+```
 
 ## Overview
 
-These bindings were translated from the swift bindings.
+These bindings were translated from the origional swift bindings for Stretch .
 
 - See the tests in ./tests/test.py for examples on how to use the bindings.
 
