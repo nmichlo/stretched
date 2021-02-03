@@ -1,7 +1,7 @@
 # Stretched
 Python bindings for Stretch - A high performance flexbox implementation written in rust.
 
-⚠️ PLEASE NOTE THIS PROJECT IS A WORK IN PROGRESS ⚠️
+⚠️ THIS PROJECT IS NO LONGER MAINTAINED ⚠️
 
 
 ## Install
